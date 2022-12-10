@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { shallowRef } from "vue";
 import { RouterLink } from "vue-router";
-import IconAngle from "./icons/IconAngle.vue";
-import IconEmail from "./icons/IconEmail.vue";
-import IconEmployeeGroup from "./icons/IconEmployeeGroup.vue";
-import IconExclamation from "./icons/IconExclamation.vue";
-import IconHome from "./icons/IconHome.vue";
+import IconAngle from "../icons/IconAngle.vue";
+import IconEmail from "../icons/IconEmail.vue";
+import IconEmployeeGroup from "../icons/IconEmployeeGroup.vue";
+import IconExclamation from "../icons/IconExclamation.vue";
+import IconHome from "../icons/IconHome.vue";
 const isSidebarOpen = shallowRef<Boolean>(false);
 function toggleSidebar() {
   isSidebarOpen.value = !isSidebarOpen.value;
@@ -67,7 +67,7 @@ function toggleSidebar() {
 </template>
 
 <style scoped lang="scss">
-@use '../assets/scss/colors' as clr;
+@use '../../assets/scss/colors' as clr;
 $sidebar-width: 4rem;
 $toggle-duration: 300ms;
 $sidebar-padding-inline-start: 1rem;
@@ -95,8 +95,11 @@ img {
 }
 li {
   min-width: fit-content;
+  list-style-type: none;
+  left: -10px;
+  position: relative;
   cursor: pointer;
-  padding-inline-start: $sidebar-padding-inline-start;
+  //   padding-inline-start: $sidebar-padding-inline-start;
   &:hover {
     color: clr.$secondary;
     background-color: lighten($color: clr.$bg-dark, $amount: 5);
@@ -120,7 +123,7 @@ li {
 }
 .sidebar-head {
   position: relative;
-  // padding-block-end: 4rem;
+  //   padding-block-end: 4rem;
 }
 .sidebar-toggle {
   padding-inline-start: $sidebar-padding-inline-start;
