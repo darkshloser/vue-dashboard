@@ -1,10 +1,9 @@
 // https://codepen.io/YusukeNakaya/pen/ebLjde
 
 <script lang="ts">
-import { defineComponent, shallowRef, onMounted, ref } from "vue";
-import type { Ref } from "vue";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
-  name: "Navbar",
+  name: "CrypticNavbar",
   components: {},
   setup() {
     const scene = ref(0);
@@ -12,14 +11,11 @@ export default defineComponent({
     return { scene, maxScene };
   },
   mounted() {
-    // setTimeout(() => {
-    //   scene = maxScene - 3;
-    // }, 1000);
+    setTimeout(() => {
+      this.scene = this.maxScene - 3;
+    }, 1000);
   },
 });
-
-// let scene = shallowRef<number>(0);
-// const maxScene = shallowRef<number>(5);
 </script>
 
 <template>
